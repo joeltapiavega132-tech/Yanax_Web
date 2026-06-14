@@ -70,31 +70,3 @@ export default function Navbar() {
     </header>
   )
 }
-
-        <a href="https://wa.me/593987265163?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20Yanax"
-          target="_blank" rel="noopener noreferrer" className="btn-primary navbar__cta">
-          Cotizar proyecto
-        </a>
-
-        <button className={`navbar__hamburger ${menuOpen ? 'open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-          <span /><span /><span />
-        </button>
-      </div>
-
-      <div className={`navbar__mobile ${menuOpen ? 'open' : ''}`}>
-        {NAV_LINKS.map((link) => (
-          <a key={link.href} href={link.href} className="navbar__mobile-link"
-            onClick={(e) => handleNavClick(e, link.href)}>
-            {link.label}
-          </a>
-        ))}
-        <a href="https://wa.me/593987265163?text=Hola%2C%20quiero%20cotizar%20un%20proyecto"
-          target="_blank" rel="noopener noreferrer" className="btn-primary"
-          onClick={() => setMenuOpen(false)}>
-          Cotizar proyecto
-        </a>
-      </div>
-    </header>
-  )
-}

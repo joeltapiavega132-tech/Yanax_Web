@@ -1,0 +1,101 @@
+.philosophy {
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 80% 50%, rgba(123,47,190,0.08) 0%, transparent 60%),
+    linear-gradient(180deg, transparent 0%, rgba(9,9,15,0.5) 100%);
+  pointer-events: none;
+}
+
+.philosophy__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(48px, 8vw, 100px);
+  align-items: start;
+}
+
+.philosophy__accent {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.philosophy__btn { margin-top: 32px; }
+
+.philosophy__right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.philosophy__pillar {
+  display: flex;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.philosophy__pillar:first-child { border-top: 1px solid var(--color-border); }
+
+.philosophy__pillar::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--grad-purple);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.philosophy__pillar:hover::before { opacity: 1; transform: scaleY(1); }
+.philosophy__pillar:hover { padding-left: 20px; }
+
+.philosophy__pillar-num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-purple-1);
+  opacity: 0.6;
+  flex-shrink: 0;
+  padding-top: 3px;
+  letter-spacing: 0.05em;
+}
+
+.philosophy__pillar-sub {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  margin-bottom: 6px;
+}
+
+.philosophy__pillar-title {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.philosophy__pillar-desc {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .philosophy__inner { grid-template-columns: 1fr; }
+  .philosophy__left { text-align: left; }
+}
